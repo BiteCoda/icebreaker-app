@@ -7,8 +7,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button ;
 import android.widget.TextView;
+import com.estimote.sdk.Region;
+import com.estimote.sdk.BeaconManager;
 
 public class MainActivity extends ActionBarActivity {
+
+    private static final String ESTIMOTE_PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
+    private static final Region ALL_ESTIMOTE_BEACONS = new Region("regionId", ESTIMOTE_PROXIMITY_UUID, null, null);
 
     Button button;
     @Override

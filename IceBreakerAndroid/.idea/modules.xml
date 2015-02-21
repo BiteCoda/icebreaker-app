@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/IceBreaker.iml" filepath="$PROJECT_DIR$/IceBreaker.iml" />
       <module fileurl="file://$PROJECT_DIR$/IceBreakerAndroid.iml" filepath="$PROJECT_DIR$/IceBreakerAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/estimote-sdk-preview/estimote-sdk-preview.iml" filepath="$PROJECT_DIR$/estimote-sdk-preview/estimote-sdk-preview.iml" />
     </modules>
   </component>
 </project>
