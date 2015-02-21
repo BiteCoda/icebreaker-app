@@ -31,11 +31,12 @@ server.use(restify.gzipResponse());
 
 // Listen to subscribe requests
 server.post('/subscribe', function(req, res, next) {
-	var reqObject = JSON.parse(req.params['request']);
+	console.log("processing");
+	var reqObject = JSON.parse(req.body);
 	var newToken = Token(reqObject.deviceToken, reqObject.deviceType);
 	var userId = reqObject.userId;
 	idToDeviceMappings[userId] = newToken;
-	console.log("The user Id: " + userId + " was mapped to: " + newToken);
+	console.log("The user Id: " + userId + " was mapped to: " + newToken.deviceToken);
 	res.send(200, Message("Added device to subscribers list!", null));
 });
 
