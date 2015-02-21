@@ -23,7 +23,7 @@ class ScanViewController: UIViewController {
         super.viewDidLoad()
         
         // Add notification listener
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "foundBeacon", name: NOTIF_BEACON_FOUND, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "foundBeacon:", name: NOTIF_BEACON_FOUND, object: nil)
         
     }
     
@@ -39,7 +39,7 @@ class ScanViewController: UIViewController {
         
         var luckyBeacon: ESTBeacon = notification.userInfo![NOTIF_BEACON_KEY] as ESTBeacon
         
-        println(luckyBeacon.major)
+        println("Received Notification beacon major id = \(luckyBeacon.major), minor = \(luckyBeacon.minor)")
         
     }
     

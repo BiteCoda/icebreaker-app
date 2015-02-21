@@ -7,64 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F696A981A98F7550099B0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F696A971A98F7550099B0EF /* AppDelegate.swift */; };
-		9F696A9B1A98F7550099B0EF /* IceBreaker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F696A991A98F7550099B0EF /* IceBreaker.xcdatamodeld */; };
-		9F696A9D1A98F7550099B0EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F696A9C1A98F7550099B0EF /* LoginViewController.swift */; };
-		9F696AA01A98F7550099B0EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F696A9E1A98F7550099B0EF /* Main.storyboard */; };
-		9F696AA21A98F7550099B0EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F696AA11A98F7550099B0EF /* Images.xcassets */; };
-		9F696AA51A98F7550099B0EF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F696AA31A98F7550099B0EF /* LaunchScreen.xib */; };
-		9F696AB11A98F7550099B0EF /* IceBreakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F696AB01A98F7550099B0EF /* IceBreakerTests.swift */; };
-		9F696ABC1A98F8740099B0EF /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F696ABB1A98F8740099B0EF /* BeaconManager.swift */; };
-		9F696ABE1A98F8B80099B0EF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9F696ABD1A98F8B80099B0EF /* Podfile */; };
-		9FF3F9041A98FDE900C81E7F /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF3F9031A98FDE900C81E7F /* Beacon.swift */; };
-		9FF3F9071A9900A800C81E7F /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF3F9061A9900A800C81E7F /* ScanViewController.swift */; };
-		9FF3F90A1A9908F100C81E7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF3F9091A9908F100C81E7F /* Constants.swift */; };
-		D5A69CEFAF8A8454E6A16A79 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F93608946865A1E54A61869 /* libPods.a */; };
+		9F42A2631A9922FA00308CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2621A9922FA00308CBF /* AppDelegate.swift */; };
+		9F42A2661A9922FA00308CBF /* IceBreaker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2641A9922FA00308CBF /* IceBreaker.xcdatamodeld */; };
+		9F42A2681A9922FA00308CBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2671A9922FA00308CBF /* ViewController.swift */; };
+		9F42A26B1A9922FA00308CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F42A2691A9922FA00308CBF /* Main.storyboard */; };
+		9F42A26D1A9922FA00308CBF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F42A26C1A9922FA00308CBF /* Images.xcassets */; };
+		9F42A2701A9922FA00308CBF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F42A26E1A9922FA00308CBF /* LaunchScreen.xib */; };
+		9F42A27C1A9922FA00308CBF /* IceBreakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A27B1A9922FA00308CBF /* IceBreakerTests.swift */; };
+		9F42A2911A9923A900308CBF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9F42A2901A9923A900308CBF /* Podfile */; };
+		9F42A29A1A9924BA00308CBF /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2941A9924BA00308CBF /* BeaconManager.swift */; };
+		9F42A29B1A9924BA00308CBF /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2961A9924BA00308CBF /* Beacon.swift */; };
+		9F42A29C1A9924BA00308CBF /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2981A9924BA00308CBF /* ScanViewController.swift */; };
+		9F42A29D1A9924BA00308CBF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2991A9924BA00308CBF /* Constants.swift */; };
+		9F42A2A41A9927CB00308CBF /* RESTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2A31A9927CB00308CBF /* RESTManager.swift */; };
+		C9795081863F44460B0F0FB0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 895763D62B1C74A0128E0309 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9F696AAB1A98F7550099B0EF /* PBXContainerItemProxy */ = {
+		9F42A2761A9922FA00308CBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9F696A8A1A98F7550099B0EF /* Project object */;
+			containerPortal = 9F42A2551A9922FA00308CBF /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9F696A911A98F7550099B0EF;
+			remoteGlobalIDString = 9F42A25C1A9922FA00308CBF;
 			remoteInfo = IceBreaker;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2667C5A86B1846148DCCE327 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		8F93608946865A1E54A61869 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F696A921A98F7550099B0EF /* IceBreaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IceBreaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F696A961A98F7550099B0EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F696A971A98F7550099B0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F696A9A1A98F7550099B0EF /* IceBreaker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IceBreaker.xcdatamodel; sourceTree = "<group>"; };
-		9F696A9C1A98F7550099B0EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		9F696A9F1A98F7550099B0EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9F696AA11A98F7550099B0EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9F696AA41A98F7550099B0EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		9F696AAA1A98F7550099B0EF /* IceBreakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IceBreakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F696AAF1A98F7550099B0EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F696AB01A98F7550099B0EF /* IceBreakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceBreakerTests.swift; sourceTree = "<group>"; };
-		9F696ABB1A98F8740099B0EF /* BeaconManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconManager.swift; path = BeaconManager/BeaconManager.swift; sourceTree = "<group>"; };
-		9F696ABD1A98F8B80099B0EF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		9FF3F9011A98F9C500C81E7F /* Estimote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Estimote-Bridging-Header.h"; sourceTree = "<group>"; };
-		9FF3F9031A98FDE900C81E7F /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
-		9FF3F9061A9900A800C81E7F /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScanViewController.swift; path = ScanVC/ScanViewController.swift; sourceTree = "<group>"; };
-		9FF3F9091A9908F100C81E7F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Constants/Constants.swift; sourceTree = "<group>"; };
-		D784AD8AFE1BB4F74B80B3CA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		4D0E3E08B5216E37E7ADAEC2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		895763D62B1C74A0128E0309 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F42A25D1A9922FA00308CBF /* IceBreaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IceBreaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F42A2611A9922FA00308CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F42A2621A9922FA00308CBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9F42A2651A9922FA00308CBF /* IceBreaker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IceBreaker.xcdatamodel; sourceTree = "<group>"; };
+		9F42A2671A9922FA00308CBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F42A26A1A9922FA00308CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9F42A26C1A9922FA00308CBF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9F42A26F1A9922FA00308CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9F42A2751A9922FA00308CBF /* IceBreakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IceBreakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F42A27A1A9922FA00308CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F42A27B1A9922FA00308CBF /* IceBreakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceBreakerTests.swift; sourceTree = "<group>"; };
+		9F42A2901A9923A900308CBF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		9F42A2941A9924BA00308CBF /* BeaconManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
+		9F42A2961A9924BA00308CBF /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		9F42A2981A9924BA00308CBF /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		9F42A2991A9924BA00308CBF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9F42A29E1A9925D300308CBF /* IceBreaker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IceBreaker-Bridging-Header.h"; sourceTree = "<group>"; };
+		9F42A2A31A9927CB00308CBF /* RESTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RESTManager.swift; path = Utilities/RESTManager.swift; sourceTree = "<group>"; };
+		D03B39DDCBF091ABCC03E209 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9F696A8F1A98F7550099B0EF /* Frameworks */ = {
+		9F42A25A1A9922FA00308CBF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5A69CEFAF8A8454E6A16A79 /* libPods.a in Frameworks */,
+				C9795081863F44460B0F0FB0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9F696AA71A98F7550099B0EF /* Frameworks */ = {
+		9F42A2721A9922FA00308CBF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,132 +76,133 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9F696A891A98F7550099B0EF = {
+		9550C9BD27C4A10C50B4F4E7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9F696ABD1A98F8B80099B0EF /* Podfile */,
-				9F696A941A98F7550099B0EF /* IceBreaker */,
-				9F696AAD1A98F7550099B0EF /* IceBreakerTests */,
-				9F696A931A98F7550099B0EF /* Products */,
-				A54388B1F0244D3713F513ED /* Pods */,
-				A4E81893092DDCA5AFA04CE1 /* Frameworks */,
+				D03B39DDCBF091ABCC03E209 /* Pods.debug.xcconfig */,
+				4D0E3E08B5216E37E7ADAEC2 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F42A2541A9922FA00308CBF = {
+			isa = PBXGroup;
+			children = (
+				9F42A2901A9923A900308CBF /* Podfile */,
+				9F42A25F1A9922FA00308CBF /* IceBreaker */,
+				9F42A2781A9922FA00308CBF /* IceBreakerTests */,
+				9F42A25E1A9922FA00308CBF /* Products */,
+				9550C9BD27C4A10C50B4F4E7 /* Pods */,
+				B9A531F87199E87E21134B63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		9F696A931A98F7550099B0EF /* Products */ = {
+		9F42A25E1A9922FA00308CBF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9F696A921A98F7550099B0EF /* IceBreaker.app */,
-				9F696AAA1A98F7550099B0EF /* IceBreakerTests.xctest */,
+				9F42A25D1A9922FA00308CBF /* IceBreaker.app */,
+				9F42A2751A9922FA00308CBF /* IceBreakerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9F696A941A98F7550099B0EF /* IceBreaker */ = {
+		9F42A25F1A9922FA00308CBF /* IceBreaker */ = {
 			isa = PBXGroup;
 			children = (
-				9FF3F9081A9908C400C81E7F /* Constants */,
-				9FF3F9051A99004700C81E7F /* ScanVC */,
-				9FF3F9021A98FD9D00C81E7F /* Models */,
-				9F696ABA1A98F7A10099B0EF /* BeaconManager */,
-				9F696A971A98F7550099B0EF /* AppDelegate.swift */,
-				9F696A9C1A98F7550099B0EF /* LoginViewController.swift */,
-				9F696A9E1A98F7550099B0EF /* Main.storyboard */,
-				9F696AA11A98F7550099B0EF /* Images.xcassets */,
-				9F696AA31A98F7550099B0EF /* LaunchScreen.xib */,
-				9F696A991A98F7550099B0EF /* IceBreaker.xcdatamodeld */,
-				9F696A951A98F7550099B0EF /* Supporting Files */,
+				9F42A2A21A99278F00308CBF /* Utilities */,
+				9F42A2931A9924BA00308CBF /* Manager */,
+				9F42A2951A9924BA00308CBF /* Models */,
+				9F42A2971A9924BA00308CBF /* ScanViewController */,
+				9F42A2621A9922FA00308CBF /* AppDelegate.swift */,
+				9F42A2671A9922FA00308CBF /* ViewController.swift */,
+				9F42A2691A9922FA00308CBF /* Main.storyboard */,
+				9F42A26C1A9922FA00308CBF /* Images.xcassets */,
+				9F42A26E1A9922FA00308CBF /* LaunchScreen.xib */,
+				9F42A2641A9922FA00308CBF /* IceBreaker.xcdatamodeld */,
+				9F42A2601A9922FA00308CBF /* Supporting Files */,
 			);
 			path = IceBreaker;
 			sourceTree = "<group>";
 		};
-		9F696A951A98F7550099B0EF /* Supporting Files */ = {
+		9F42A2601A9922FA00308CBF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9FF3F9011A98F9C500C81E7F /* Estimote-Bridging-Header.h */,
-				9F696A961A98F7550099B0EF /* Info.plist */,
+				9F42A29E1A9925D300308CBF /* IceBreaker-Bridging-Header.h */,
+				9F42A2611A9922FA00308CBF /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9F696AAD1A98F7550099B0EF /* IceBreakerTests */ = {
+		9F42A2781A9922FA00308CBF /* IceBreakerTests */ = {
 			isa = PBXGroup;
 			children = (
-				9F696AB01A98F7550099B0EF /* IceBreakerTests.swift */,
-				9F696AAE1A98F7550099B0EF /* Supporting Files */,
+				9F42A27B1A9922FA00308CBF /* IceBreakerTests.swift */,
+				9F42A2791A9922FA00308CBF /* Supporting Files */,
 			);
 			path = IceBreakerTests;
 			sourceTree = "<group>";
 		};
-		9F696AAE1A98F7550099B0EF /* Supporting Files */ = {
+		9F42A2791A9922FA00308CBF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9F696AAF1A98F7550099B0EF /* Info.plist */,
+				9F42A27A1A9922FA00308CBF /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9F696ABA1A98F7A10099B0EF /* BeaconManager */ = {
+		9F42A2931A9924BA00308CBF /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				9F696ABB1A98F8740099B0EF /* BeaconManager.swift */,
+				9F42A2941A9924BA00308CBF /* BeaconManager.swift */,
 			);
-			name = BeaconManager;
+			path = Manager;
 			sourceTree = "<group>";
 		};
-		9FF3F9021A98FD9D00C81E7F /* Models */ = {
+		9F42A2951A9924BA00308CBF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9FF3F9031A98FDE900C81E7F /* Beacon.swift */,
+				9F42A2961A9924BA00308CBF /* Beacon.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		9FF3F9051A99004700C81E7F /* ScanVC */ = {
+		9F42A2971A9924BA00308CBF /* ScanViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9FF3F9061A9900A800C81E7F /* ScanViewController.swift */,
+				9F42A2981A9924BA00308CBF /* ScanViewController.swift */,
 			);
-			name = ScanVC;
+			path = ScanViewController;
 			sourceTree = "<group>";
 		};
-		9FF3F9081A9908C400C81E7F /* Constants */ = {
+		9F42A2A21A99278F00308CBF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				9FF3F9091A9908F100C81E7F /* Constants.swift */,
+				9F42A2991A9924BA00308CBF /* Constants.swift */,
+				9F42A2A31A9927CB00308CBF /* RESTManager.swift */,
 			);
-			name = Constants;
+			name = Utilities;
 			sourceTree = "<group>";
 		};
-		A4E81893092DDCA5AFA04CE1 /* Frameworks */ = {
+		B9A531F87199E87E21134B63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8F93608946865A1E54A61869 /* libPods.a */,
+				895763D62B1C74A0128E0309 /* libPods.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A54388B1F0244D3713F513ED /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2667C5A86B1846148DCCE327 /* Pods.debug.xcconfig */,
-				D784AD8AFE1BB4F74B80B3CA /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9F696A911A98F7550099B0EF /* IceBreaker */ = {
+		9F42A25C1A9922FA00308CBF /* IceBreaker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F696AB41A98F7550099B0EF /* Build configuration list for PBXNativeTarget "IceBreaker" */;
+			buildConfigurationList = 9F42A27F1A9922FA00308CBF /* Build configuration list for PBXNativeTarget "IceBreaker" */;
 			buildPhases = (
-				7845331EEAD3F2FC39410E5A /* Check Pods Manifest.lock */,
-				9F696A8E1A98F7550099B0EF /* Sources */,
-				9F696A8F1A98F7550099B0EF /* Frameworks */,
-				9F696A901A98F7550099B0EF /* Resources */,
-				5D73F3112E9BEB8166278571 /* Copy Pods Resources */,
+				30138BC958585CB9C6158EC7 /* Check Pods Manifest.lock */,
+				9F42A2591A9922FA00308CBF /* Sources */,
+				9F42A25A1A9922FA00308CBF /* Frameworks */,
+				9F42A25B1A9922FA00308CBF /* Resources */,
+				56793C3ACA4E600CD9A1FC6E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,46 +210,46 @@
 			);
 			name = IceBreaker;
 			productName = IceBreaker;
-			productReference = 9F696A921A98F7550099B0EF /* IceBreaker.app */;
+			productReference = 9F42A25D1A9922FA00308CBF /* IceBreaker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9F696AA91A98F7550099B0EF /* IceBreakerTests */ = {
+		9F42A2741A9922FA00308CBF /* IceBreakerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F696AB71A98F7550099B0EF /* Build configuration list for PBXNativeTarget "IceBreakerTests" */;
+			buildConfigurationList = 9F42A2821A9922FA00308CBF /* Build configuration list for PBXNativeTarget "IceBreakerTests" */;
 			buildPhases = (
-				9F696AA61A98F7550099B0EF /* Sources */,
-				9F696AA71A98F7550099B0EF /* Frameworks */,
-				9F696AA81A98F7550099B0EF /* Resources */,
+				9F42A2711A9922FA00308CBF /* Sources */,
+				9F42A2721A9922FA00308CBF /* Frameworks */,
+				9F42A2731A9922FA00308CBF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9F696AAC1A98F7550099B0EF /* PBXTargetDependency */,
+				9F42A2771A9922FA00308CBF /* PBXTargetDependency */,
 			);
 			name = IceBreakerTests;
 			productName = IceBreakerTests;
-			productReference = 9F696AAA1A98F7550099B0EF /* IceBreakerTests.xctest */;
+			productReference = 9F42A2751A9922FA00308CBF /* IceBreakerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9F696A8A1A98F7550099B0EF /* Project object */ = {
+		9F42A2551A9922FA00308CBF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = floridapoly.IceMakers;
 				TargetAttributes = {
-					9F696A911A98F7550099B0EF = {
+					9F42A25C1A9922FA00308CBF = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
-					9F696AA91A98F7550099B0EF = {
+					9F42A2741A9922FA00308CBF = {
 						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 9F696A911A98F7550099B0EF;
+						TestTargetID = 9F42A25C1A9922FA00308CBF;
 					};
 				};
 			};
-			buildConfigurationList = 9F696A8D1A98F7550099B0EF /* Build configuration list for PBXProject "IceBreaker" */;
+			buildConfigurationList = 9F42A2581A9922FA00308CBF /* Build configuration list for PBXProject "IceBreaker" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -254,30 +257,30 @@
 				en,
 				Base,
 			);
-			mainGroup = 9F696A891A98F7550099B0EF;
-			productRefGroup = 9F696A931A98F7550099B0EF /* Products */;
+			mainGroup = 9F42A2541A9922FA00308CBF;
+			productRefGroup = 9F42A25E1A9922FA00308CBF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9F696A911A98F7550099B0EF /* IceBreaker */,
-				9F696AA91A98F7550099B0EF /* IceBreakerTests */,
+				9F42A25C1A9922FA00308CBF /* IceBreaker */,
+				9F42A2741A9922FA00308CBF /* IceBreakerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9F696A901A98F7550099B0EF /* Resources */ = {
+		9F42A25B1A9922FA00308CBF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F696AA01A98F7550099B0EF /* Main.storyboard in Resources */,
-				9F696AA51A98F7550099B0EF /* LaunchScreen.xib in Resources */,
-				9F696ABE1A98F8B80099B0EF /* Podfile in Resources */,
-				9F696AA21A98F7550099B0EF /* Images.xcassets in Resources */,
+				9F42A26B1A9922FA00308CBF /* Main.storyboard in Resources */,
+				9F42A2701A9922FA00308CBF /* LaunchScreen.xib in Resources */,
+				9F42A2911A9923A900308CBF /* Podfile in Resources */,
+				9F42A26D1A9922FA00308CBF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9F696AA81A98F7550099B0EF /* Resources */ = {
+		9F42A2731A9922FA00308CBF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -287,22 +290,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5D73F3112E9BEB8166278571 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7845331EEAD3F2FC39410E5A /* Check Pods Manifest.lock */ = {
+		30138BC958585CB9C6158EC7 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -317,54 +305,70 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		56793C3ACA4E600CD9A1FC6E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9F696A8E1A98F7550099B0EF /* Sources */ = {
+		9F42A2591A9922FA00308CBF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F696A9D1A98F7550099B0EF /* LoginViewController.swift in Sources */,
-				9F696ABC1A98F8740099B0EF /* BeaconManager.swift in Sources */,
-				9FF3F9041A98FDE900C81E7F /* Beacon.swift in Sources */,
-				9F696A9B1A98F7550099B0EF /* IceBreaker.xcdatamodeld in Sources */,
-				9FF3F90A1A9908F100C81E7F /* Constants.swift in Sources */,
-				9F696A981A98F7550099B0EF /* AppDelegate.swift in Sources */,
-				9FF3F9071A9900A800C81E7F /* ScanViewController.swift in Sources */,
+				9F42A2681A9922FA00308CBF /* ViewController.swift in Sources */,
+				9F42A29A1A9924BA00308CBF /* BeaconManager.swift in Sources */,
+				9F42A29B1A9924BA00308CBF /* Beacon.swift in Sources */,
+				9F42A2661A9922FA00308CBF /* IceBreaker.xcdatamodeld in Sources */,
+				9F42A29D1A9924BA00308CBF /* Constants.swift in Sources */,
+				9F42A2A41A9927CB00308CBF /* RESTManager.swift in Sources */,
+				9F42A2631A9922FA00308CBF /* AppDelegate.swift in Sources */,
+				9F42A29C1A9924BA00308CBF /* ScanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9F696AA61A98F7550099B0EF /* Sources */ = {
+		9F42A2711A9922FA00308CBF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F696AB11A98F7550099B0EF /* IceBreakerTests.swift in Sources */,
+				9F42A27C1A9922FA00308CBF /* IceBreakerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9F696AAC1A98F7550099B0EF /* PBXTargetDependency */ = {
+		9F42A2771A9922FA00308CBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9F696A911A98F7550099B0EF /* IceBreaker */;
-			targetProxy = 9F696AAB1A98F7550099B0EF /* PBXContainerItemProxy */;
+			target = 9F42A25C1A9922FA00308CBF /* IceBreaker */;
+			targetProxy = 9F42A2761A9922FA00308CBF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9F696A9E1A98F7550099B0EF /* Main.storyboard */ = {
+		9F42A2691A9922FA00308CBF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9F696A9F1A98F7550099B0EF /* Base */,
+				9F42A26A1A9922FA00308CBF /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		9F696AA31A98F7550099B0EF /* LaunchScreen.xib */ = {
+		9F42A26E1A9922FA00308CBF /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9F696AA41A98F7550099B0EF /* Base */,
+				9F42A26F1A9922FA00308CBF /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -372,7 +376,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9F696AB21A98F7550099B0EF /* Debug */ = {
+		9F42A27D1A9922FA00308CBF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -414,7 +418,7 @@
 			};
 			name = Debug;
 		};
-		9F696AB31A98F7550099B0EF /* Release */ = {
+		9F42A27E1A9922FA00308CBF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -449,31 +453,34 @@
 			};
 			name = Release;
 		};
-		9F696AB51A98F7550099B0EF /* Debug */ = {
+		9F42A2801A9922FA00308CBF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2667C5A86B1846148DCCE327 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = D03B39DDCBF091ABCC03E209 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = IceBreaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "./IceBreaker/Estimote-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "IceBreaker/IceBreaker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		9F696AB61A98F7550099B0EF /* Release */ = {
+		9F42A2811A9922FA00308CBF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D784AD8AFE1BB4F74B80B3CA /* Pods.release.xcconfig */;
+			baseConfigurationReference = 4D0E3E08B5216E37E7ADAEC2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = IceBreaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "./IceBreaker/Estimote-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "IceBreaker/IceBreaker-Bridging-Header.h";
 			};
 			name = Release;
 		};
-		9F696AB81A98F7550099B0EF /* Debug */ = {
+		9F42A2831A9922FA00308CBF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -492,7 +499,7 @@
 			};
 			name = Debug;
 		};
-		9F696AB91A98F7550099B0EF /* Release */ = {
+		9F42A2841A9922FA00308CBF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,29 +517,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9F696A8D1A98F7550099B0EF /* Build configuration list for PBXProject "IceBreaker" */ = {
+		9F42A2581A9922FA00308CBF /* Build configuration list for PBXProject "IceBreaker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F696AB21A98F7550099B0EF /* Debug */,
-				9F696AB31A98F7550099B0EF /* Release */,
+				9F42A27D1A9922FA00308CBF /* Debug */,
+				9F42A27E1A9922FA00308CBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F696AB41A98F7550099B0EF /* Build configuration list for PBXNativeTarget "IceBreaker" */ = {
+		9F42A27F1A9922FA00308CBF /* Build configuration list for PBXNativeTarget "IceBreaker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F696AB51A98F7550099B0EF /* Debug */,
-				9F696AB61A98F7550099B0EF /* Release */,
+				9F42A2801A9922FA00308CBF /* Debug */,
+				9F42A2811A9922FA00308CBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F696AB71A98F7550099B0EF /* Build configuration list for PBXNativeTarget "IceBreakerTests" */ = {
+		9F42A2821A9922FA00308CBF /* Build configuration list for PBXNativeTarget "IceBreakerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F696AB81A98F7550099B0EF /* Debug */,
-				9F696AB91A98F7550099B0EF /* Release */,
+				9F42A2831A9922FA00308CBF /* Debug */,
+				9F42A2841A9922FA00308CBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -540,17 +547,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9F696A991A98F7550099B0EF /* IceBreaker.xcdatamodeld */ = {
+		9F42A2641A9922FA00308CBF /* IceBreaker.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9F696A9A1A98F7550099B0EF /* IceBreaker.xcdatamodel */,
+				9F42A2651A9922FA00308CBF /* IceBreaker.xcdatamodel */,
 			);
-			currentVersion = 9F696A9A1A98F7550099B0EF /* IceBreaker.xcdatamodel */;
+			currentVersion = 9F42A2651A9922FA00308CBF /* IceBreaker.xcdatamodel */;
 			path = IceBreaker.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 9F696A8A1A98F7550099B0EF /* Project object */;
+	rootObject = 9F42A2551A9922FA00308CBF /* Project object */;
 }

@@ -73,11 +73,11 @@ class BeaconManager : NSObject, ESTBeaconManagerDelegate {
         if beacons.count > 0 {
             var filteredBeacons: [ESTBeacon] = beacons as [ESTBeacon]
             
-            if (majorID != nil && minorID != nil) {
-                filteredBeacons = filteredBeacons.filter{$0.major == self.majorID && $0.minor == self.minorID}
-            }
-            if (majorID != nil) {
-                filteredBeacons = filteredBeacons.filter{$0.major == self.majorID}
+            // Find a beacon that is not your own
+            
+            filteredBeacons = filteredBeacons.filter{
+                $0.major != Beacon.sharedBeacon.majorID! &&
+                $0.minor != Beacon.sharedBeacon.minorID!
             }
             
             // Get the first beacon you see.
@@ -86,7 +86,11 @@ class BeaconManager : NSObject, ESTBeaconManagerDelegate {
             
             println("Found beacon with major ID: \(luckyBeacon.major) and minor ID: \(luckyBeacon.minor)")
             
-            NSNotificationCenter.defaultCenter().postNotificationName(NOTIF_BEACON_FOUND, object: nil, userInfo: [NOTIF_BEACON_KEY:luckyBeacon])
+            NSNotificationCenter.defaultCenter().postNotificationName(
+                NOTIF_BEACON_FOUND,
+                object: nil,
+                userInfo: [NOTIF_BEACON_KEY:luckyBeacon]
+            )
             
             self.stop()
         }
