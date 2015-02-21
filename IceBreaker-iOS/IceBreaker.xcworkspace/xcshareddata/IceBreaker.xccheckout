@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FA6C3326-A9D7-416D-BBE5-3B30BAE86DE9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>IceBreaker</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B0741E4748AB15D3A989EDC3E0AFAB75E5F714CF</key>
+		<string>https://github.com/bmuk/icebreaker-app.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>IceBreaker-iOS/IceBreaker.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B0741E4748AB15D3A989EDC3E0AFAB75E5F714CF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/bmuk/icebreaker-app.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B0741E4748AB15D3A989EDC3E0AFAB75E5F714CF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B0741E4748AB15D3A989EDC3E0AFAB75E5F714CF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>icebreaker-app</string>
+		</dict>
+	</array>
+</dict>
+</plist>
