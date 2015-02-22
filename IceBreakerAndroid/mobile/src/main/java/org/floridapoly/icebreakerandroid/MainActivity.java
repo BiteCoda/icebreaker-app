@@ -97,12 +97,13 @@ public class MainActivity extends ActionBarActivity implements Observer {
     public void onClick(View view) {
         // here's where we'll start searching, etc.
         spinner.setVisibility(View.VISIBLE);
-        server.getMessage(Constants.userId, Constants.userId);
+        server.getMessage(Constants.userId);
     }
 
     @Override
     public void update(Observable observable, Object data) {
         message.setText(ObservableMessage.getInstance().getMessage());
+        spinner.setVisibility(View.GONE);
         Log.i(Constants.TAG, "I am updating the textView.");
     }
 

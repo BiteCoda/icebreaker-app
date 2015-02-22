@@ -26,9 +26,9 @@ public class Server {
                 new JsonHttpResponseHandler());
     }
 
-    public void getMessage(String userId, String targetId) {
+    public void getMessage(String targetId) {
         RequestParams paramMap = new RequestParams();
-        paramMap.put("userId", userId);
+        paramMap.put("userId", Constants.userId);
         paramMap.put("targetId", targetId);
         client.post(serverUrl + "/message",
                 paramMap,
@@ -46,6 +46,14 @@ public class Server {
                     }
                 }
         );
+    }
+
+    public void unpair() {
+        RequestParams paramMap = new RequestParams();
+        paramMap.put("userId", Constants.userId);
+        client.post(serverUrl + "/unpair",
+                paramMap,
+                new JsonHttpResponseHandler());
     }
 
     public static void parseResponse(JSONObject response) {
