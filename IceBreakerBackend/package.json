@@ -9,6 +9,9 @@
   "author": "Jacob Chen",
   "license": "ISC",
   "dependencies": {
-    "restify": "^2.8.5"
+    "apn": "^1.7.2",
+    "restify": "^2.8.5",
+    "sync-request": "^2.0.1",
+    "unirest": "^0.4.0"
   }
 }
