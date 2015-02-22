@@ -61,6 +61,7 @@ public class MainActivity extends ActionBarActivity implements Observer {
             Log.i(TAG, "No valid Google Play Services APK found.");
             finish();
         }
+        BeaconSentinel.getInstance(getApplicationContext()).startSearch();
 
         // spinning progress bar animation during search
         spinner = (ProgressBar) findViewById(R.id.progressBar);
@@ -104,7 +105,8 @@ public class MainActivity extends ActionBarActivity implements Observer {
             spinner.setVisibility(View.VISIBLE);
             // what if we left the app when we were paired?
             server.unpair();
-            server.getMessage(Constants.userId);
+            String maybeTarget = BeaconSentinel.getInstance(getApplicationContext()).getTarget();
+            server.getMessage(maybeTarget);
         } else {
             server.unpair();
             button.setText("Search");
