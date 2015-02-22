@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.content.Context;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -40,6 +41,7 @@ public class MainActivity extends ActionBarActivity implements Observer {
 
     private ProgressBar spinner;
     private TextView message;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +67,8 @@ public class MainActivity extends ActionBarActivity implements Observer {
         spinner.setVisibility(View.GONE);
         // text box
         message = (TextView) findViewById(R.id.textView);
+        // button
+        button = (Button) findViewById(R.id.button);
     }
 
     // we need to check for play services apk here too
@@ -96,12 +100,21 @@ public class MainActivity extends ActionBarActivity implements Observer {
 
     public void onClick(View view) {
         // here's where we'll start searching, etc.
-        spinner.setVisibility(View.VISIBLE);
-        server.getMessage(Constants.userId);
+        if (button.getText().toString().equals("Search")) {
+            spinner.setVisibility(View.VISIBLE);
+            // what if we left the app when we were paired?
+            server.unpair();
+            server.getMessage(Constants.userId);
+        } else {
+            server.unpair();
+            button.setText("Search");
+            message.setText("");
+        }
     }
 
     @Override
     public void update(Observable observable, Object data) {
+        button.setText("Release");
         message.setText(ObservableMessage.getInstance().getMessage());
         spinner.setVisibility(View.GONE);
         Log.i(Constants.TAG, "I am updating the textView.");
