@@ -22,9 +22,11 @@ class Queue {
     
     func push(object:AnyObject) {
         
+        myQueue.append(object)
+        
         if (myQueue.count > queueSize) {
             myQueue.removeLast()
-            myQueue.append(object)
+            
         }
         
     }

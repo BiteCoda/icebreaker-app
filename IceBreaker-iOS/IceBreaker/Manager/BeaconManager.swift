@@ -71,17 +71,20 @@ class BeaconManager : NSObject, ESTBeaconManagerDelegate {
     func beaconManager(manager: ESTBeaconManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: ESTBeaconRegion!) {
         
         if beacons.count > 0 {
+            
+            println("found beacons")
+            
             var filteredBeacons: [ESTBeacon] = beacons as [ESTBeacon]
             
-            // Find a beacon that is not your own
-            
+            // Find beacon that is not your own
             filteredBeacons = filteredBeacons.filter{
                 $0.major != Beacon.sharedBeacon.majorID! &&
                 $0.minor != Beacon.sharedBeacon.minorID!
             }
             
-            // Filter for beacons that were connected already
+            println("after 1st filter count is now \(filteredBeacons.count)")
             
+            // Filter for beacons that were connected already
             for beacon in Beacon.sharedBeacon.beaconsConnected {
                 filteredBeacons = filteredBeacons.filter {
                     $0.major != beacon.majorID! &&
@@ -89,28 +92,37 @@ class BeaconManager : NSObject, ESTBeaconManagerDelegate {
                 }
             }
             
-            // Filter for beacons in Connection FIFO
+            println("after 2nd filter count is now \(filteredBeacons.count)")
             
-            for beacon in Beacon.sharedBeacon.beaconsTried.myQueue {
+            // Filter for beacons in tried connection FIFO
+            var queue: [Beacon] = Beacon.sharedBeacon.beaconsTried.myQueue as [Beacon]
+            
+            println(queue)
+            for beacon in queue {
+                
+                println("beacon maj: \(beacon.majorID) min: \(beacon.minorID)")
+                
                 filteredBeacons = filteredBeacons.filter {
                     $0.major != beacon.majorID! &&
                         $0.minor != beacon.minorID!
                 }
             }
+            println("after 3rd filter count is now \(filteredBeacons.count)")
             
             // Get the first beacon you see.
-            
-            let luckyBeacon: ESTBeacon = filteredBeacons.first!
-            
-            println("Found beacon with major ID: \(luckyBeacon.major) and minor ID: \(luckyBeacon.minor)")
-            
-            NSNotificationCenter.defaultCenter().postNotificationName(
-                NOTIF_BEACON_FOUND,
-                object: nil,
-                userInfo: [NOTIF_BEACON_KEY:luckyBeacon]
-            )
-            
-            self.stop()
+            if filteredBeacons.count > 0 {
+                let luckyBeacon: ESTBeacon = filteredBeacons.first!
+                
+                println("Found beacon with major ID: \(luckyBeacon.major) and minor ID: \(luckyBeacon.minor)")
+                
+                NSNotificationCenter.defaultCenter().postNotificationName(
+                    NOTIF_BEACON_FOUND,
+                    object: nil,
+                    userInfo: [NOTIF_BEACON_KEY:luckyBeacon]
+                )
+                
+                self.stop()
+            }
         }
         
     }

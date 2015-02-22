@@ -55,14 +55,19 @@ class ScanViewController: UIViewController {
         
         beaconInQuestion = notification.userInfo![NOTIF_BEACON_KEY] as? ESTBeacon
         
-        println("Received Notification beacon major id = \(beaconInQuestion!.major), minor = \(beaconInQuestion!.minor)")
+        println("found beacon major id = \(beaconInQuestion!.major), minor = \(beaconInQuestion!.minor)")
         
-        RESTManager.sharedRESTManager.request(beaconInQuestion!.major!, minorID: beaconInQuestion!.minor!)
+        RESTManager.sharedRESTManager.request(
+            beaconInQuestion!.major!,
+            targetMinorID: beaconInQuestion!.minor!
+        )
         
         SVProgressHUD.show()
     }
     
     func beaconPaired(notification: NSNotification) {
+        
+        println("beacon paired")
         
         if !answerNotification {
         
@@ -71,17 +76,14 @@ class ScanViewController: UIViewController {
             // Beacon paired, add to known beacons, display the question, change button text
             println ("Beacon has been paired ")
             
-            /*
             Beacon.sharedBeacon.beaconsConnected.append(
                 Beacon(majID: beaconInQuestion!.major!, minID: beaconInQuestion!.minor!)
             )
-            */
 
             let content: String = notification.userInfo![NOTIF_CONTENT_KEY] as String
             
             println(content)
-            
-            self.messageLabelView.font = UIFont(name: "HelveticaNeue-Light", size: 35.0)
+
             self.messageLabelView.text = content
             
             self.searchButton.setTitle("Found!", forState: UIControlState.Normal)
@@ -91,6 +93,8 @@ class ScanViewController: UIViewController {
     }
     
     func failedPairingSource(notification: NSNotification) {
+        
+        println("failed pairing source")
         
         if !answerNotification {
             SVProgressHUD.dismiss()
@@ -113,6 +117,8 @@ class ScanViewController: UIViewController {
     }
     
     func failedPairingTarget(notification: NSNotification) {
+        
+        println("failed pairing target")
         
         if !answerNotification {
             SVProgressHUD.dismiss()
@@ -145,7 +151,30 @@ class ScanViewController: UIViewController {
         
         if !answerNotification {
             SVProgressHUD.dismiss()
-            Beacon.sharedBeacon.beaconsTried.push(Beacon(majID: beaconInQuestion!.major, minID: beaconInQuestion!.minor))
+            var alert: UIAlertController = UIAlertController(title: "Device Can't Pair", message: "Target isn't subscribed to server", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            var dismissAction: UIAlertAction = UIAlertAction(title: "Okay, fine", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
+                
+                alert.dismissViewControllerAnimated(true, completion: nil)
+                
+            }
+            
+            alert.addAction(dismissAction)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            Beacon.sharedBeacon.beaconsTried.push(
+                Beacon(majID: beaconInQuestion!.major, minID: beaconInQuestion!.minor)
+            )
+            
+            
+            println(Beacon.sharedBeacon.beaconsTried.myQueue)
+            
+            var queue: [Beacon] = Beacon.sharedBeacon.beaconsTried.myQueue as [Beacon]
+            
+            for beacon in queue {
+                println("beacon maj: \(beacon.majorID!) min: \(beacon.minorID!)")
+            }
             println("Target not subscribed")
         }
         
@@ -179,9 +208,7 @@ class ScanViewController: UIViewController {
             if RESTManager.sharedRESTManager.hasRegistered {
                 
                 // Begin searching
-                //beaconManager.listenToRegion(majID: nil, minID: nil)
-                
-                RESTManager.sharedRESTManager.request(Beacon.sharedBeacon.majorID!, minorID: Beacon.sharedBeacon.minorID!)
+                beaconManager.listenToRegion(majID: nil, minID: nil)
                 
                 SVProgressHUD.show()
                 

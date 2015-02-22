@@ -29,6 +29,8 @@ class RESTManager {
     
     func register(deviceToken: String) {
         
+        println("Subscribing")
+        
         let majorID: NSNumber = Beacon.sharedBeacon.majorID!
         let minorID: NSNumber = Beacon.sharedBeacon.minorID!
         
@@ -66,12 +68,17 @@ class RESTManager {
             }
     }
     
-    func request(majorID: NSNumber, minorID: NSNumber) {
+    func request(targetMajorID: NSNumber, targetMinorID: NSNumber) {
         
         let majorID: NSNumber = Beacon.sharedBeacon.majorID!
         let minorID: NSNumber = Beacon.sharedBeacon.minorID!
         
-        var parameters: [String: String] = ["userId":"(major:\(majorID), minor:\(minorID))", "targetUserId":"(major:\(majorID), minor:\(minorID))"]
+        var parameters: [String: String] = [
+            "userId":"(major:\(majorID), minor:\(minorID))",
+            "targetUserId":"(major:\(targetMajorID), minor:\(targetMinorID))"
+        ]
+        
+        println("Messaging: \(parameters)")
         
         manager.POST(
             BASE_URL + "/message",
@@ -138,6 +145,8 @@ class RESTManager {
     
     func unpair() {
         
+        println("Unpairing")
+        
         let majorID: NSNumber = Beacon.sharedBeacon.majorID!
         let minorID: NSNumber = Beacon.sharedBeacon.minorID!
         
@@ -149,12 +158,11 @@ class RESTManager {
             success: {
                 (operation: AFHTTPRequestOperation!, responseObj: AnyObject!) -> Void in
                 
-                println(responseObj)
+                println("Pairing Successful")
             
             }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 
                 println(error)
-                
             
         }
         
