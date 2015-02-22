@@ -15,6 +15,8 @@ class Beacon {
     
     var majorID: NSNumber?
     var minorID: NSNumber?
+    let beaconsTried: Queue = Queue(queueSize: 3)
+    var beaconsConnected:[Beacon] = []
     
     class var sharedBeacon : Beacon {
         

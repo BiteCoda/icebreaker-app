@@ -4,3 +4,4 @@
 
 #import <EstimoteSDK/ESTBeaconManager.h>
 #import <AFNetworking/AFNetworking.h>
+#import <SVProgressHUD/SVProgressHUD.h>

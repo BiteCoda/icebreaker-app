@@ -80,6 +80,24 @@ class BeaconManager : NSObject, ESTBeaconManagerDelegate {
                 $0.minor != Beacon.sharedBeacon.minorID!
             }
             
+            // Filter for beacons that were connected already
+            
+            for beacon in Beacon.sharedBeacon.beaconsConnected {
+                filteredBeacons = filteredBeacons.filter {
+                    $0.major != beacon.majorID! &&
+                    $0.minor != beacon.minorID!
+                }
+            }
+            
+            // Filter for beacons in Connection FIFO
+            
+            for beacon in Beacon.sharedBeacon.beaconsTried.myQueue {
+                filteredBeacons = filteredBeacons.filter {
+                    $0.major != beacon.majorID! &&
+                        $0.minor != beacon.minorID!
+                }
+            }
+            
             // Get the first beacon you see.
             
             let luckyBeacon: ESTBeacon = filteredBeacons.first!

@@ -1,3 +1,4 @@
 
 pod 'EstimoteSDK'
 pod 'AFNetworking'
+pod 'SVProgressHUD'

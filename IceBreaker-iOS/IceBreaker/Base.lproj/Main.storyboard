@@ -12,7 +12,7 @@
                         <viewControllerLayoutGuide type="top" id="ZNa-LJ-6Vm"/>
                         <viewControllerLayoutGuide type="bottom" id="eYr-pl-KWq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="o2W-5X-j8f">
+                    <view key="view" contentMode="scaleAspectFit" id="o2W-5X-j8f">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -33,36 +33,41 @@
                                     <action selector="didTouchUpInsideSearchButton:" destination="KXP-OG-akw" eventType="touchUpInside" id="x4J-HR-quI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vko-oG-Jmm">
+                                <rect key="frame" x="16" y="271" width="568" height="42"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uw3-vx-PwB">
+                                <rect key="frame" x="0.0" y="236" width="600" height="167"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="35"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eYr-pl-KWq" firstAttribute="top" secondItem="Tfw-Wb-kIt" secondAttribute="bottom" constant="289" id="8XD-Dl-sF3"/>
-                            <constraint firstItem="cWh-pY-nnb" firstAttribute="centerX" secondItem="o2W-5X-j8f" secondAttribute="centerX" id="Fly-hW-OhQ"/>
-                            <constraint firstItem="eYr-pl-KWq" firstAttribute="top" secondItem="cWh-pY-nnb" secondAttribute="bottom" constant="461" id="I0m-Vi-p1T"/>
+                            <constraint firstAttribute="centerY" secondItem="Vko-oG-Jmm" secondAttribute="centerY" constant="8" id="Eh2-g7-1nE"/>
                             <constraint firstItem="eYr-pl-KWq" firstAttribute="top" secondItem="cWh-pY-nnb" secondAttribute="bottom" constant="461" id="Ji0-sa-xZn"/>
-                            <constraint firstItem="cWh-pY-nnb" firstAttribute="top" secondItem="ZNa-LJ-6Vm" secondAttribute="bottom" constant="39" id="NuU-bp-deA"/>
+                            <constraint firstItem="eYr-pl-KWq" firstAttribute="top" secondItem="uw3-vx-PwB" secondAttribute="bottom" constant="197" id="XHH-3J-dc3"/>
                             <constraint firstItem="cWh-pY-nnb" firstAttribute="centerX" secondItem="o2W-5X-j8f" secondAttribute="centerX" id="XpZ-DQ-J1Y"/>
-                            <constraint firstItem="Tfw-Wb-kIt" firstAttribute="top" secondItem="ZNa-LJ-6Vm" secondAttribute="bottom" constant="8" symbolic="YES" id="aX6-7I-sTj"/>
-                            <constraint firstItem="Tfw-Wb-kIt" firstAttribute="leading" secondItem="o2W-5X-j8f" secondAttribute="leading" id="fjj-Yz-o1m"/>
+                            <constraint firstItem="Vko-oG-Jmm" firstAttribute="leading" secondItem="o2W-5X-j8f" secondAttribute="leading" constant="10" id="dNd-so-18K"/>
+                            <constraint firstItem="Vko-oG-Jmm" firstAttribute="trailing" secondItem="o2W-5X-j8f" secondAttribute="trailing" constant="10" id="jFv-Ye-TJ8"/>
                             <constraint firstItem="cWh-pY-nnb" firstAttribute="top" secondItem="ZNa-LJ-6Vm" secondAttribute="bottom" constant="39" id="koz-fW-ELr"/>
-                            <constraint firstAttribute="trailing" secondItem="Tfw-Wb-kIt" secondAttribute="trailing" id="zbV-Z6-M7x"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Tfw-Wb-kIt"/>
+                                <exclude reference="uw3-vx-PwB"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="fjj-Yz-o1m"/>
-                                <exclude reference="zbV-Z6-M7x"/>
-                                <exclude reference="aX6-7I-sTj"/>
-                                <exclude reference="Fly-hW-OhQ"/>
-                                <exclude reference="NuU-bp-deA"/>
-                                <exclude reference="I0m-Vi-p1T"/>
-                                <exclude reference="8XD-Dl-sF3"/>
+                                <exclude reference="XHH-3J-dc3"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="messageLabelView" destination="Vko-oG-Jmm" id="PMQ-Ya-HBq"/>
                         <outlet property="searchButton" destination="cWh-pY-nnb" id="Gb6-gy-CiX"/>
                     </connections>
                 </viewController>

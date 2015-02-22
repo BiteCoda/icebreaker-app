@@ -55,9 +55,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         
-        let tokenBytes = deviceToken.bytes
+        var characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
         
-        println(tokenBytes)
+        var deviceTokenString: String = ( deviceToken.description as NSString )
+            .stringByTrimmingCharactersInSet( characterSet )
+            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+        
+        RESTManager.sharedRESTManager.register(deviceTokenString)
         
     }
     
@@ -67,8 +71,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+    func application(application: UIApplication, didReceiveRemoteNotification
+        userInfo: [NSObject : AnyObject]) {
+        println("Received a remote notification")
+        println(userInfo)
         
+        var aps:NSDictionary = userInfo[APS_KEY]! as NSDictionary
+        
+        var answer: String = aps[APS_ALERT] as String
+        
+        var info: [String:String] = [ANSWER_KEY: answer]
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTIF_ANSWER_RECEIVED, object: nil, userInfo: info)
     }
 
     // MARK: - Core Data stack
