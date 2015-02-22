@@ -84,6 +84,23 @@ var checkForExistingPairForUsers = function(userOne, userTwo){
 	return 0;
 }
 
+var unpairUser = function(userId){
+	console.log("Inside unpairUser: " + userId);
+
+	for(var i = 0; i < userPairs.length; i++)
+	{
+		var pair = userPairs[i];
+		if(pair.indexOf(userId) != -1)
+		{
+			userPairs.splice(i,1);
+			console.log("Removed Pairing for userId: " + userId);
+			break;
+		}
+	}
+
+	return true;
+}
+
 var sendNotificationToUser = function (targetUserId, message) {
 	console.log("sendNotificationToUser - targetUserId: " + targetUserId);
 	var token = idToDeviceMappings[targetUserId];
@@ -114,21 +131,10 @@ var sendAnswerToQuestion = function(targetUserId) {
 					});
 	var body = JSON.parse(res.getBody());
 	console.log(body);
-	// console.log("Teh result is: " + JSON.stringify(quote.body));
-	// console.log("Got the quote: " + quote["quote"] + " by: " + quote["author"]);
-	// question =  quote["quote"];
 	sendNotificationToUser(targetUserId, body.author);
 	console.log("Returning question");
 	question = body;
 	return question;
-	// return question;
-	// unirest.post("https://andruxnet-random-famous-quotes.p.mashape.com/cat=famous")
-	// 	   	.header("X-Mashape-Key", "0rLUKP6rEFmshBWVTh3vxVgDZVBbp1OLTdjjsnaBr7xVyYDbWU")
-	// 		.header("Content-Type", "application/x-www-form-urlencoded")
-	// 		.header("Accept", "application/json")
-	// 		.end(function (result) {
-
-	// 		});
 }
 
 // Listen to subscribe requests
@@ -161,6 +167,17 @@ server.post('/message', function(req, res, next) {
 		res.send(400);
 	}
 });
+
+server.post('/unpair', function(req, res, next) {
+	var reqObject = req.params;
+	var userId = reqObject[reqVars.SOURCE_USER];
+
+	console.log("Got parameters from Request: " + userId);
+	var test = unpairUser(userId);
+
+	res.send(200, Message("Successfully canceled all pairings for the user", null));
+});
+
 
 // Start listening to requests on port 3000
 server.listen(3000, function(){
