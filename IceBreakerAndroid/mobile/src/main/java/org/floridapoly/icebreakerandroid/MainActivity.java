@@ -2,6 +2,7 @@ package org.floridapoly.icebreakerandroid;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.os.AsyncTask;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +32,9 @@ public class MainActivity extends ActionBarActivity {
     // our registration id
     String regid;
 
+    // communication with server
+    Server server;
+
     private ProgressBar spinner;
 
     @Override
@@ -44,14 +48,15 @@ public class MainActivity extends ActionBarActivity {
             gcm = GoogleCloudMessaging.getInstance(this);
             // our server is stateless; create new regid every time
             // this is blocking, so we'll see if it causes problems
-            try {
-                regid = gcm.register(SENDER_ID);
-            } catch (IOException ex) {
-                Log.i(TAG, "IOException when registering: " + ex.getMessage());
-            }
+            registerInBackground();
+            
+            server = new Server();
+            server.register(regid);
         } else {
             Log.i(TAG, "No valid Google Play Services APK found.");
+            finish();
         }
+
         // spinning progress bar animation during search
         spinner = (ProgressBar) findViewById(R.id.progressBar);
         spinner.setVisibility(View.GONE);
@@ -108,5 +113,43 @@ public class MainActivity extends ActionBarActivity {
             return false;
         }
         return true;
+    }
+
+    private void registerInBackground() {
+        new AsyncTask<Void, String, String>() {
+            @Override
+            protected String doInBackground(Void... params) {
+                String msg;
+                try {
+                    if (gcm == null) {
+                        gcm = GoogleCloudMessaging.getInstance(context);
+                    }
+                    regid = gcm.register(SENDER_ID);
+                    msg = "Device registered, registration ID=" + regid;
+
+                    // You should send the registration ID to your server over HTTP,
+                    // so it can use GCM/HTTP or CCS to send messages to your app.
+                    // The request to your server should be authenticated if your app
+                    // is using accounts.
+
+                    // For this demo: we don't need to send it because the device
+                    // will send upstream messages to a server that echo back the
+                    // message using the 'from' address in the message.
+
+                    // Persist the registration ID - no need to register again.
+                } catch (IOException ex) {
+                    msg = "Error :" + ex.getMessage();
+                    // If there is an error, don't just keep trying to register.
+                    // Require the user to click a button again, or perform
+                    // exponential back-off.
+                }
+                return msg;
+            }
+
+            @Override
+            protected void onPostExecute(String msg) {
+                Log.i(TAG, "Registered with GCM Server" + msg);
+            }
+        }.execute(null, null, null);
     }
 }

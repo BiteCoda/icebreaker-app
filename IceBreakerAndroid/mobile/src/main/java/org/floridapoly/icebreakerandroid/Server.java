@@ -1,7 +1,6 @@
 package org.floridapoly.icebreakerandroid;
 
 import com.loopj.android.http.*;
-import java.util.HashMap;
 
 public class Server {
     AsyncHttpClient client = new AsyncHttpClient();
@@ -16,7 +15,7 @@ public class Server {
         paramMap.put("userId", "(major:(31782), minor:(36689))");
         paramMap.put("deviceToken", regid);
         paramMap.put("deviceType", "android");
-        client.post("http://icebreaker.duckdns.org",
+        client.post("http://icebreaker.duckdns.org/subscribe",
                 paramMap,
                 new JsonHttpResponseHandler());
     }
