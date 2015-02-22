@@ -17,9 +17,9 @@
 		9F42A29A1A9924BA00308CBF /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2941A9924BA00308CBF /* BeaconManager.swift */; };
 		9F42A29B1A9924BA00308CBF /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2961A9924BA00308CBF /* Beacon.swift */; };
 		9F42A29C1A9924BA00308CBF /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2981A9924BA00308CBF /* ScanViewController.swift */; };
-		9F42A29D1A9924BA00308CBF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2991A9924BA00308CBF /* Constants.swift */; };
 		9F42A2A41A9927CB00308CBF /* RESTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2A31A9927CB00308CBF /* RESTManager.swift */; };
 		9F42A2A61A9971FF00308CBF /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2A51A9971FF00308CBF /* Queue.swift */; };
+		9F42A2A81A99CB5E00308CBF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2A71A99CB5E00308CBF /* Constants.swift */; };
 		C9795081863F44460B0F0FB0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 895763D62B1C74A0128E0309 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -50,10 +50,10 @@
 		9F42A2941A9924BA00308CBF /* BeaconManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
 		9F42A2961A9924BA00308CBF /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
 		9F42A2981A9924BA00308CBF /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
-		9F42A2991A9924BA00308CBF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F42A29E1A9925D300308CBF /* IceBreaker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IceBreaker-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F42A2A31A9927CB00308CBF /* RESTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RESTManager.swift; path = Utilities/RESTManager.swift; sourceTree = "<group>"; };
 		9F42A2A51A9971FF00308CBF /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = Utilities/Queue.swift; sourceTree = "<group>"; };
+		9F42A2A71A99CB5E00308CBF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
 		D03B39DDCBF091ABCC03E209 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,7 +176,7 @@
 		9F42A2A21A99278F00308CBF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				9F42A2991A9924BA00308CBF /* Constants.swift */,
+				9F42A2A71A99CB5E00308CBF /* Constants.swift */,
 				9F42A2A31A9927CB00308CBF /* RESTManager.swift */,
 				9F42A2A51A9971FF00308CBF /* Queue.swift */,
 			);
@@ -336,10 +336,10 @@
 				9F42A29B1A9924BA00308CBF /* Beacon.swift in Sources */,
 				9F42A2661A9922FA00308CBF /* IceBreaker.xcdatamodeld in Sources */,
 				9F42A2A61A9971FF00308CBF /* Queue.swift in Sources */,
-				9F42A29D1A9924BA00308CBF /* Constants.swift in Sources */,
 				9F42A2A41A9927CB00308CBF /* RESTManager.swift in Sources */,
 				9F42A2631A9922FA00308CBF /* AppDelegate.swift in Sources */,
 				9F42A29C1A9924BA00308CBF /* ScanViewController.swift in Sources */,
+				9F42A2A81A99CB5E00308CBF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
