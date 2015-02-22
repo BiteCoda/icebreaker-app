@@ -18,12 +18,18 @@ public class Server {
         // our registration id with GCM
         // and our device type (android)
         RequestParams paramMap = new RequestParams();
-        paramMap.put("userId", "(major:(31782), minor:(36689))");
+        paramMap.put("userId", Constants.userId);
         paramMap.put("deviceToken", regid);
         paramMap.put("deviceType", "android");
         client.post(serverUrl + "/subscribe",
                 paramMap,
-                new JsonHttpResponseHandler());
+                new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                        super.onSuccess(statusCode, headers, response);
+                        Server.parseResponse(response);
+                    }
+                });
     }
 
     public void getMessage(String targetId) {
