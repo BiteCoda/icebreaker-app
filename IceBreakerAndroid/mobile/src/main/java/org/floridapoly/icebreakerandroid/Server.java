@@ -30,18 +30,19 @@ public class Server {
         RequestParams paramMap = new RequestParams();
         paramMap.put("userId", userId);
         paramMap.put("targetId", targetId);
-        JSONObject response;
         client.post(serverUrl + "/message",
                 paramMap,
                 new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                         super.onSuccess(statusCode, headers, response);
-                        Watcher.getInstance().observable.notifyObservers(response);
+                        Server.parseResponse(response);
                     }
+
                     @Override
                     public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                         super.onFailure(statusCode, headers, responseString, throwable);
+                        Log.i(Constants.TAG, "getMessage failed for environmental reasons.");
                     }
                 }
         );
@@ -66,7 +67,8 @@ public class Server {
                 message += object.getString("quote");
                 message += "\n";
             }
-            Watcher.getInstance().observable.notifyObservers(message);
+            Log.i(Constants.TAG, message);
+            ObservableMessage.getInstance().setMessage(message);
         } catch (JSONException ex) {
             Log.i(Constants.TAG, "JSONException: " + ex.getMessage());
         }

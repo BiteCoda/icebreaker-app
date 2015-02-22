@@ -44,7 +44,7 @@ public class MainActivity extends ActionBarActivity implements Observer {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // we watch the watcher
-        Watcher.getInstance().observable.addObserver(this);
+        ObservableMessage.getInstance().addObserver(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // get our application context
@@ -97,12 +97,13 @@ public class MainActivity extends ActionBarActivity implements Observer {
     public void onClick(View view) {
         // here's where we'll start searching, etc.
         spinner.setVisibility(View.VISIBLE);
+        server.getMessage(Constants.userId, Constants.userId);
     }
 
     @Override
     public void update(Observable observable, Object data) {
-        message.setText(data.toString());
-        Log.i(Constants.TAG, "I am updating the textView.")
+        message.setText(ObservableMessage.getInstance().getMessage());
+        Log.i(Constants.TAG, "I am updating the textView.");
     }
 
     /**
