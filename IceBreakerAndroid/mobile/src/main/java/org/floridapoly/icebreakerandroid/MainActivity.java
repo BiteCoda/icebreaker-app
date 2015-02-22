@@ -49,9 +49,6 @@ public class MainActivity extends ActionBarActivity {
             // our server is stateless; create new regid every time
             // this is blocking, so we'll see if it causes problems
             registerInBackground();
-            
-            server = new Server();
-            server.register(regid);
         } else {
             Log.i(TAG, "No valid Google Play Services APK found.");
             finish();
@@ -149,6 +146,13 @@ public class MainActivity extends ActionBarActivity {
             @Override
             protected void onPostExecute(String msg) {
                 Log.i(TAG, "Registered with GCM Server" + msg);
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        server = new Server();
+                        server.register(regid);
+                    }
+                });
             }
         }.execute(null, null, null);
     }
