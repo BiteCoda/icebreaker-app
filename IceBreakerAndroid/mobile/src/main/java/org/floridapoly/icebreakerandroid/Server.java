@@ -23,19 +23,13 @@ public class Server {
         paramMap.put("deviceType", "android");
         client.post(serverUrl + "/subscribe",
                 paramMap,
-                new JsonHttpResponseHandler() {
-                    @Override
-                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                        super.onSuccess(statusCode, headers, response);
-                        Server.parseResponse(response);
-                    }
-                });
+                new JsonHttpResponseHandler());
     }
 
-    public void getMessage(String targetId) {
+    public void getMessage(String targetUserId) {
         RequestParams paramMap = new RequestParams();
         paramMap.put("userId", Constants.userId);
-        paramMap.put("targetId", targetId);
+        paramMap.put("targetUserId", targetUserId);
         client.post(serverUrl + "/message",
                 paramMap,
                 new JsonHttpResponseHandler() {
