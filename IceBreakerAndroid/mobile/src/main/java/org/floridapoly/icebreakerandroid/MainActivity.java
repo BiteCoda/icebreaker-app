@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.content.Context;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -13,10 +14,13 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import android.util.Log;
+import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements Observer {
 
     // tag used for logging purposes
     static final String TAG = "IceBreaker";
@@ -36,9 +40,13 @@ public class MainActivity extends ActionBarActivity {
     Server server;
 
     private ProgressBar spinner;
+    private TextView message;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // we watch the watcher
+        ObservableMessage.getInstance().addObserver(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // get our application context
@@ -49,17 +57,19 @@ public class MainActivity extends ActionBarActivity {
             // our server is stateless; create new regid every time
             // this is blocking, so we'll see if it causes problems
             registerInBackground();
-            
-            server = new Server();
-            server.register(regid);
         } else {
             Log.i(TAG, "No valid Google Play Services APK found.");
             finish();
         }
+        BeaconSentinel.getInstance(getApplicationContext()).startSearch();
 
         // spinning progress bar animation during search
         spinner = (ProgressBar) findViewById(R.id.progressBar);
         spinner.setVisibility(View.GONE);
+        // text box
+        message = (TextView) findViewById(R.id.textView);
+        // button
+        button = (Button) findViewById(R.id.button);
     }
 
     // we need to check for play services apk here too
@@ -91,8 +101,25 @@ public class MainActivity extends ActionBarActivity {
 
     public void onClick(View view) {
         // here's where we'll start searching, etc.
-        spinner.setVisibility(View.VISIBLE);
+        if (button.getText().toString().equals("Search")) {
+            spinner.setVisibility(View.VISIBLE);
+            // what if we left the app when we were paired?
+            server.unpair();
+            String maybeTarget = BeaconSentinel.getInstance(getApplicationContext()).getTarget();
+            server.getMessage(maybeTarget);
+        } else {
+            server.unpair();
+            button.setText("Search");
+            message.setText("");
+        }
+    }
 
+    @Override
+    public void update(Observable observable, Object data) {
+        button.setText("Release");
+        message.setText(ObservableMessage.getInstance().getMessage());
+        spinner.setVisibility(View.GONE);
+        Log.i(Constants.TAG, "I am updating the textView.");
     }
 
     /**
@@ -149,6 +176,13 @@ public class MainActivity extends ActionBarActivity {
             @Override
             protected void onPostExecute(String msg) {
                 Log.i(TAG, "Registered with GCM Server" + msg);
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        server = new Server();
+                        server.register(regid);
+                    }
+                });
             }
         }.execute(null, null, null);
     }
