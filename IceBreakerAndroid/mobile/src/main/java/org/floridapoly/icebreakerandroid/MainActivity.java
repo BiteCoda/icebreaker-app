@@ -13,10 +13,13 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import android.util.Log;
+import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements Observer {
 
     // tag used for logging purposes
     static final String TAG = "IceBreaker";
@@ -36,9 +39,12 @@ public class MainActivity extends ActionBarActivity {
     Server server;
 
     private ProgressBar spinner;
+    private TextView message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // we watch the watcher
+        Watcher.getInstance().observable.addObserver(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // get our application context
@@ -57,6 +63,8 @@ public class MainActivity extends ActionBarActivity {
         // spinning progress bar animation during search
         spinner = (ProgressBar) findViewById(R.id.progressBar);
         spinner.setVisibility(View.GONE);
+        // text box
+        message = (TextView) findViewById(R.id.textView);
     }
 
     // we need to check for play services apk here too
@@ -89,7 +97,12 @@ public class MainActivity extends ActionBarActivity {
     public void onClick(View view) {
         // here's where we'll start searching, etc.
         spinner.setVisibility(View.VISIBLE);
+    }
 
+    @Override
+    public void update(Observable observable, Object data) {
+        message.setText(data.toString());
+        Log.i(Constants.TAG, "I am updating the textView.")
     }
 
     /**
