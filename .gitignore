@@ -32,6 +32,9 @@ proguard/
 # OSX
 # =========================
 
+# Xcode
+IceBreaker-iOS/IceBreaker.xcworkspace/xcuserdata/
+
 .DS_Store
 .AppleDouble
 .LSOverride
