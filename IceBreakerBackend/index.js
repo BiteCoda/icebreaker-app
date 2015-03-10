@@ -39,7 +39,8 @@ var reqVars = {
 	SOURCE_USER:'userId', 
 	TARGET_USER:'targetUserId', 
 	DEVICE_TOKEN:'deviceToken',
-	DEVICE_TYPE:'deviceType'
+	DEVICE_TYPE:'deviceType',
+    PASSWORD:'password'
 };
 
 var errorVars = {
@@ -178,7 +179,10 @@ server.post('/subscribe', function(req, res, next) {
 	var reqObject = req.params;
 	var newToken = Token(reqObject[reqVars.DEVICE_TOKEN], reqObject[reqVars.DEVICE_TYPE]);
 	var userId = reqObject[reqVars.SOURCE_USER];
-
+    var password = reqObject[reqVars.PASSWORD];
+    
+    // authenticate password with userId
+    
 	console.log("Storing Device Token...");
 	idToDeviceMappings[userId] = newToken;
 	console.log("The user Id: " + userId + " was mapped to: " + newToken.deviceToken);

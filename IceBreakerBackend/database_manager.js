@@ -3,13 +3,17 @@ var MONGO_URL = 'mongodb://localhost/' + DATABASE_NAME;
 var mongoose;
 
 // Collection names
-var REGISTRATION_COLLECTION = 'registration'
+var REGISTRATION_COLLECTION = 'REGISTRATION_COLLECTION'
+var PAIRED_USER_COLLECTION = 'PAIRED_USER_COLLECTION'
+var AUTHENTICATION_COLLECTION = 'AUTHENTICATION_COLLECTION'
 
 // Schemas
+var authenticationSchema;
 var registrationSchema;
 var pairedUserSchema;
 
 // Models
+var authenticationModel;
 var registrationModel;
 var pairedUserModel;
 
@@ -30,8 +34,17 @@ module.exports = {
 
         });
 
-    }
+    },
 
+    /*
+    *   Authentication Model functions
+    */
+    
+    getAuthenticationObjectByUserId: function(userId) {
+    
+    
+    },
+    
     /*
     *   Registration Model functions
     */
@@ -56,10 +69,10 @@ module.exports = {
 
         return registrationObject;
 
-    }
-
-    function getDeviceTokenByUserId(userId) {
-
+    },
+    
+    getDeviceTokenByUserId: function(userId) {
+        
         registrationModel.findOne({userId: userId}, 'deviceToken', function (err, deviceToken) {
 
             if (err) {
@@ -73,31 +86,29 @@ module.exports = {
             }
 
         });
-    }
+    },
 
     /*
     *   PairedUser Model functions
     */
-
-    function createPairedUserObject(primaryUserId, secondaryUserId) {
-
+    
+    createPairedUserObject: function(primaryUserId, secondaryUserId) {
         var pairedUserObject = new pairedUserModel({
-            primaryUserId: primaryUserId,
-            secondaryUserId: secondaryUserId
-        });
+                primaryUserId: primaryUserId,
+                secondaryUserId: secondaryUserId
+            });
 
-        pairedUserObject.save(function (err, pairedUserObject){
-            if (err) {
-                console.log(err);
-                return console.error(err);
-            } else {
-                // Save successful
-            }
-        });
-    }
+            pairedUserObject.save(function (err, pairedUserObject){
+                if (err) {
+                    console.log(err);
+                    return console.error(err);
+                } else {
+                    // Save successful
+                }
+            });
+    },
 
-    function checkIfPrimaryUserIsPaired(userId) {
-
+    checkIfPrimaryUserIsPaired: function(userId) {
         pairedUserModel.findOne({ primaryUserId: userId }, function(err, pairedUser) {
             if (err) {
                 // handle error
@@ -112,10 +123,10 @@ module.exports = {
             }
 
         });
-    }
-
-    function checkIfSecondaryUserPaired(userId) {
-
+    
+    },
+    
+    checkIfSecondaryUserIsPaired(userId) {
         pairedUserModel.findOne({secondaryUserId:userId}, function(err, pairedUser) {
 
             if (err) {
@@ -131,12 +142,17 @@ module.exports = {
             }
 
         });
-
+    
     }
 }
 
 function setupSchemas() {
 
+    authenticationSchema = mongoose.Schema({
+        userId: String,
+        password: String
+    });
+    
     registrationSchema = mongoose.Schema({
         userId: String,
         deviceToken: String,
@@ -152,10 +168,22 @@ function setupSchemas() {
 
 function setupModels() {
 
+    authenticationModel = mongoose.model(AUTHENTICATION_COLLECTION, authenticationSchema);
     registrationModel = mongoose.model(REGISTRATION_COLLECTION, registrationSchema);
+    pairedUserModel = mongoose.model(PAIRED_USER_COLLECTION, pairedUserSchema);
 
 }
 
 function setupVirtuals() {
+    
+    authenticationSchema
+    .virtual('authenticate')
+    .get(function (password) {
+        if (password == this.password) {
+            return true;
+        } else {
+            return false;
+        }
+    });
 
 }
