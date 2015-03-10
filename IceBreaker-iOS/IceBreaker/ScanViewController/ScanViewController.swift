@@ -208,7 +208,7 @@ class ScanViewController: UIViewController {
             if RESTManager.sharedRESTManager.hasRegistered {
                 
                 // Begin searching
-                beaconManager.listenToRegion(majID: nil, minID: nil)
+                beaconManager.listenToRegion(mode:beaconManagerMode.discoveryAnyMode, majID: nil, minID: nil)
                 
                 SVProgressHUD.show()
                 

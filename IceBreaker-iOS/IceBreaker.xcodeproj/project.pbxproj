@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F0695231AAF5D0200D46A82 /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0695221AAF5D0100D46A82 /* BeaconTableViewCell.swift */; };
+		9F0695251AAF601600D46A82 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0695241AAF601600D46A82 /* AuthenticationViewController.swift */; };
 		9F42A2631A9922FA00308CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2621A9922FA00308CBF /* AppDelegate.swift */; };
 		9F42A2661A9922FA00308CBF /* IceBreaker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2641A9922FA00308CBF /* IceBreaker.xcdatamodeld */; };
 		9F42A26B1A9922FA00308CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F42A2691A9922FA00308CBF /* Main.storyboard */; };
@@ -20,6 +22,7 @@
 		9F42A2A41A9927CB00308CBF /* RESTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2A31A9927CB00308CBF /* RESTManager.swift */; };
 		9F42A2A61A9971FF00308CBF /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2A51A9971FF00308CBF /* Queue.swift */; };
 		9F42A2A81A99CB5E00308CBF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42A2A71A99CB5E00308CBF /* Constants.swift */; };
+		9F7C63D11AAF523000546597 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C63D01AAF523000546597 /* RegistrationViewController.swift */; };
 		C9795081863F44460B0F0FB0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 895763D62B1C74A0128E0309 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +39,8 @@
 /* Begin PBXFileReference section */
 		4D0E3E08B5216E37E7ADAEC2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		895763D62B1C74A0128E0309 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F0695221AAF5D0100D46A82 /* BeaconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconTableViewCell.swift; path = Registration/BeaconTableViewCell.swift; sourceTree = "<group>"; };
+		9F0695241AAF601600D46A82 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationViewController.swift; path = Registration/AuthenticationViewController.swift; sourceTree = "<group>"; };
 		9F42A25D1A9922FA00308CBF /* IceBreaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IceBreaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F42A2611A9922FA00308CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F42A2621A9922FA00308CBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +59,7 @@
 		9F42A2A31A9927CB00308CBF /* RESTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RESTManager.swift; path = Utilities/RESTManager.swift; sourceTree = "<group>"; };
 		9F42A2A51A9971FF00308CBF /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = Utilities/Queue.swift; sourceTree = "<group>"; };
 		9F42A2A71A99CB5E00308CBF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
+		9F7C63D01AAF523000546597 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = Registration/RegistrationViewController.swift; sourceTree = "<group>"; };
 		D03B39DDCBF091ABCC03E209 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +115,7 @@
 		9F42A25F1A9922FA00308CBF /* IceBreaker */ = {
 			isa = PBXGroup;
 			children = (
+				9F7C63CF1AAF520300546597 /* Registration */,
 				9F42A2A21A99278F00308CBF /* Utilities */,
 				9F42A2931A9924BA00308CBF /* Manager */,
 				9F42A2951A9924BA00308CBF /* Models */,
@@ -181,6 +188,16 @@
 				9F42A2A51A9971FF00308CBF /* Queue.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		9F7C63CF1AAF520300546597 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				9F7C63D01AAF523000546597 /* RegistrationViewController.swift */,
+				9F0695221AAF5D0100D46A82 /* BeaconTableViewCell.swift */,
+				9F0695241AAF601600D46A82 /* AuthenticationViewController.swift */,
+			);
+			name = Registration;
 			sourceTree = "<group>";
 		};
 		B9A531F87199E87E21134B63 /* Frameworks */ = {
@@ -335,11 +352,14 @@
 				9F42A29A1A9924BA00308CBF /* BeaconManager.swift in Sources */,
 				9F42A29B1A9924BA00308CBF /* Beacon.swift in Sources */,
 				9F42A2661A9922FA00308CBF /* IceBreaker.xcdatamodeld in Sources */,
+				9F7C63D11AAF523000546597 /* RegistrationViewController.swift in Sources */,
 				9F42A2A61A9971FF00308CBF /* Queue.swift in Sources */,
 				9F42A2A41A9927CB00308CBF /* RESTManager.swift in Sources */,
+				9F0695251AAF601600D46A82 /* AuthenticationViewController.swift in Sources */,
 				9F42A2631A9922FA00308CBF /* AppDelegate.swift in Sources */,
 				9F42A29C1A9924BA00308CBF /* ScanViewController.swift in Sources */,
 				9F42A2A81A99CB5E00308CBF /* Constants.swift in Sources */,
+				9F0695231AAF5D0200D46A82 /* BeaconTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

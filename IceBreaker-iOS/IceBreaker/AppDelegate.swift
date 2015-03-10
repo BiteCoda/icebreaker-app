@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        BeaconManager.sharedBeaconManager
+        
         let types: UIUserNotificationType = UIUserNotificationType.Alert;
         
         let mySettings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
@@ -61,7 +63,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .stringByTrimmingCharactersInSet( characterSet )
             .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
         
-        RESTManager.sharedRESTManager.register(deviceTokenString)
+        println("deviceTokenString: \(deviceTokenString)")
+        
+        RESTManager.sharedRESTManager.deviceToken = deviceTokenString
         
     }
     

@@ -1,5 +1,9 @@
 "use strict";
 
+// Require
+
+var dbManager = require('./database_manager');
+
 // This is going to be used as the global store for all the mappings ids to device tokens
 // Is a dictionary where the key is the the estimote id and the value is a Token object
 // Later, we'll want to use a database to store these mappings for a better, more reliable solution
